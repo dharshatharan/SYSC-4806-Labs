@@ -5,7 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'BuddyList for AddressBook id: ' + ${id}" />
-<p th:text="${buddyList}" />
+    <p th:text="'BuddyList for AddressBook id: ' + ${id}" />
+    <p th:text="${buddyList}" />
+    <form action="#" th:action="@{'/addressBook/' + ${id} + '/addBuddy'}" th:object="${newBuddy}" method="post">
+        <p>
+            <input type="text" th:field="*{name}" />
+        </p>
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </form>
 </body>
 </html>
